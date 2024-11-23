@@ -1,0 +1,72 @@
+@import 'primeicons/primeicons.css';
+@import 'ngx-toastr/toastr';
+
+html, body {
+  height: 100%;
+  margin: 0;
+  overflow: hidden; /* Eliminar desplazamiento en el cuerpo para evitar scroll duplicado */
+}
+
+.main-container {
+  display: flex;
+  height: 100vh; /* Asegura que ocupe toda la altura de la pantalla */
+}
+
+
+/* Sidebar */
+.sidebar {
+  width: 250px;
+  background-color: #003366;
+  color: white;
+  padding: 10px;
+  display: flex;
+  flex-direction: column;
+  overflow-y: auto; /* Permite scroll solo en el sidebar si el contenido es grande */
+}
+
+.content {
+  flex-grow: 1;
+  overflow-y: auto; /* Permite desplazamiento en el contenido principal si es necesario */
+  padding: 20px;
+  height: 100vh; /* Mantiene el contenido dentro de la pantalla */
+}
+
+/* Configuración de colores personalizados para los toasts */
+#toast-container > .toast-success {
+  background-color: #28a745 !important;
+  color: white !important;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.3);
+}
+#toast-container > .toast-error {
+  background-color: #dc3545 !important;
+  color: white !important;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.3);
+}
+#toast-container > .toast-info {
+  background-color: #17a2b8 !important;
+  color: white !important;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.3);
+}
+#toast-container > .toast-warning {
+  background-color: #ffc107 !important;
+  color: black !important;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.3);
+}
+
+/* Modo oscuro */
+body.dark-mode {
+  background-color: #121212;
+  color: #ffffff;
+}
+
+body.dark-mode .sidebar {
+  background-color: #333333;
+  color: white;
+}
+
+body.dark-mode .content {
+  background-color: #181818;
+  color: white;
+}
+
+

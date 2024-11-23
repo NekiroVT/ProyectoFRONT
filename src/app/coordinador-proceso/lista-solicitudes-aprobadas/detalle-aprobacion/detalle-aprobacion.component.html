@@ -1,0 +1,65 @@
+<div class="modal-overlay" *ngIf="isModalVisible">
+    <div class="modal-content">
+      <!-- Main Content Section -->
+      <div class="main-content">
+        <!-- Documents Section (left aligned) -->
+        <div class="documents-section">
+          <div class="document-item">
+            <span class="document-title">CARTA DE ACEPTACIÓN</span>
+            <div class="document-icon">
+              <i class="fas fa-file"></i>
+              <i class="fas fa-eye eye-icon"></i>
+            </div>
+            <div class="download-arrow">
+              <i class="fas fa-arrow-down"></i>
+            </div>
+          </div>
+  
+          <div class="document-item">
+            <span class="document-title">CONVENIO</span>
+            <div class="document-icon">
+              <i class="fas fa-file"></i>
+              <i class="fas fa-eye eye-icon"></i>
+            </div>
+            <div class="download-arrow">
+              <i class="fas fa-arrow-down"></i>
+            </div>
+          </div>
+  
+          <div class="document-item">
+            <button class="upload-btn">SUBIR ARCHIVO</button>
+          </div>
+        </div>
+  
+        <!-- Dates Section (centered) -->
+        <div class="dates-section">
+          <div class="date-item">
+            <span class="date-label">FECHA DE INICIO:</span>
+            <input type="date" class="date-input" />
+          </div>
+          <div class="date-item">
+            <span class="date-label">FECHA DE FINAL:</span>
+            <input type="date" class="date-input" />
+          </div>
+        </div>
+  
+        <!-- Assign Supervisor Section (right aligned) -->
+        <div class="supervisors-section">
+          <span class="supervisor-label">ASIGNAR SUPERVISORES</span>
+          <div class="supervisor-dropdown">
+            <input type="text" placeholder="Asignar un supervisor..." />
+            <button class="dropdown-toggle">
+              <i class="fas fa-chevron-down"></i>
+            </button>
+          </div>
+  
+          <!-- Buttons for saving or canceling -->
+          <div class="footer">
+            <button class="cancel-btn" (click)="cancelChanges()">Cancelar cambios</button>
+            <button class="save-btn" (click)="saveChanges()">Guardar cambios</button>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  

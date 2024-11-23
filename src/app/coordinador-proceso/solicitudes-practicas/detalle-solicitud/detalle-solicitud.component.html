@@ -1,0 +1,18 @@
+<div class="modal">
+  <div class="modal-content">
+    <h2>Detalles de la Solicitud</h2>
+    <p><strong>Nombre:</strong> {{ proceso.nombre }}</p>
+    <p><strong>RUC:</strong> {{ proceso.ruc }}</p>
+    <p><strong>Domicilio Social:</strong> {{ proceso.domicilio }}</p>
+    <p><strong>Teléfono:</strong> {{ proceso.Telefono }}</p>
+    <p><strong>Fax:</strong> {{ proceso.estado }}</p>
+    <p><strong>Correo Electrónico:</strong> {{ proceso.Correo }}</p>
+    <p><strong>Página web:</strong> {{ proceso.Pagina }}</p>
+    <p><strong>Forma Jurídica:</strong> {{ proceso.Forma }}</p>
+
+    <!-- Botones de Confirmar y Cancelar -->
+    <div class="modal-actions">
+      <button class="btn-confirmar" (click)="RegresarModal()">Regresar</button>
+    </div>
+  </div>
+</div>

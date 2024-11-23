@@ -1,0 +1,162 @@
+/* Estilos para el modal de detalles */
+.proceso-card {
+  background-color: #f9f9f9;
+  padding: 10px;
+  margin-bottom: 10px;
+  border-radius: 8px;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  cursor: pointer;
+}
+
+.view-button, .reject-button, .accept-button {
+  padding: 8px 16px;
+  border-radius: 5px;
+  border: none;
+  margin: 5px;
+  cursor: pointer;
+}
+
+.view-button {
+  background-color: transparent;
+  color: #4CAF50;
+}
+
+.view-button:hover {
+  color: #45a049;
+}
+
+.reject-button {
+  background-color: #f44336;  /* Rojo */
+  color: white;
+}
+
+.reject-button:hover {
+  background-color: #e53935;  /* Rojo más oscuro */
+}
+
+.accept-button {
+  background-color: #4CAF50;  /* Verde */
+  color: white;
+}
+
+.accept-button:hover {
+  background-color: #45a049;  /* Verde más oscuro */
+}
+
+/* Estilos generales para las ventanas emergentes */
+.confirm-modal {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-color: rgba(0, 0, 0, 0.5);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 1000;
+}
+
+.confirm-content {
+  background-color: white;
+  padding: 60px;
+  border-radius: 12px;
+  width: 500px; /* Aumenta el ancho de la ventana */
+  max-width: 90%;
+  text-align: center;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1); /* Sombra suave */
+}
+
+.confirm-header {
+  font-size: 100px;  /* Aumenta el tamaño del icono */
+  color: #000000;  /* Color negro para el ícono de advertencia */
+  margin-bottom: 20px;
+}
+
+.confirm-actions {
+  display: flex;
+  justify-content: center;
+  margin-top: 30px;  /* Aumenta el espacio entre los botones */
+  gap: 20px;  /* Espaciado entre los botones */
+}
+
+.confirm-actions button {
+  padding: 15px 30px;
+  margin: 10px;
+  border-radius: 5px;
+  font-size: 18px;
+  cursor: pointer;
+  border: none;
+  transition: transform 0.2s ease, background-color 0.3s ease;
+}
+
+/* Botón "Sí, Aceptar"  de la ventana emergente xd*/
+.btn-confirmar {
+  background-color: #2ecc71;  /* Verde */
+  color: white;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.2);  /* Sombra suave */
+}
+
+.btn-confirmar:hover {
+  background-color: #27ae60;  /* Verde más oscuro */
+  box-shadow: 0 6px 12px rgba(0, 0, 0, 0.3); /* Aumenta la sombra */
+  transform: translateY(-2px); /* Efecto de elevación */
+}
+
+/* Botón "Cancelar" */
+.btn-cancelar {
+  background-color: #e74c3c;  /* Rojo */
+  color: white;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.2); /* Sombra suave */
+}
+
+.btn-cancelar:hover {
+  background-color: #c0392b;  /* Rojo más oscuro */
+  box-shadow: 0 6px 12px rgba(0, 0, 0, 0.3); /* Aumenta la sombra */
+  transform: translateY(-2px); /* Efecto de elevación */
+}
+
+/* Estilo para los íconos en la lista de solicitudes */
+.view-button {
+  background-color: transparent;
+  color: #4CAF50;  /* Verde */
+  border: none;
+  font-size: 28px;  /* Ajusta el tamaño del ícono */
+  cursor: pointer;
+}
+
+.view-button:hover {
+  color: #0c110c;  /* Verde más oscuro al pasar el mouse */
+}
+
+.reject-icon, .accept-icon {
+  font-size: 30px;  /* Tamaño más pequeño */
+  color: #000000;  /* Cambiar color de los íconos a negro */
+  cursor: pointer;
+  transition: transform 0.3s ease, background-color 0.3s ease;
+}
+
+/* Estilo para el ícono de Rechazar */
+.reject-icon {
+  background-color: transparent;  /* Sin fondo */
+  padding: 8px;
+}
+
+.reject-icon:hover {
+  color: #e74c3c;  /* Color rojo cuando se pasa el mouse */
+  transform: scale(1.1);  /* Efecto de aumento */
+}
+
+/* Estilo para el ícono de Aceptar */
+.accept-icon {
+  background-color: transparent;  /* Sin fondo */
+  padding: 8px;
+}
+
+.accept-icon:hover {
+  color: #2ecc71;  /* Color verde cuando se pasa el mouse */
+  transform: scale(1.1);  /* Efecto de aumento */
+}

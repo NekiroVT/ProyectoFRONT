@@ -1,0 +1,106 @@
+<div class="carta-container">
+  <h1>Iniciar nuevo proceso - Carta de presentación</h1>
+
+  <div class="info-section">
+    <!-- Datos Estudiante -->
+    <div class="card student-data">
+      <h2 class="section-title">Datos Estudiante:</h2>
+      <div class="form-group">
+        <label><strong>Estudiante:</strong></label>
+        <p>{{ studentData.nombre }}</p>
+      </div>
+      <div class="form-group">
+        <label><strong>Código:</strong></label>
+        <p>{{ studentData.codigo }}</p>
+      </div>
+      <div class="form-group">
+        <label><strong>DNI:</strong></label>
+        <p>{{ studentData.dni }}</p>
+      </div>
+      <div class="form-group">
+        <label><strong>Teléfono:</strong></label>
+        <p>{{ studentData.telefono }}</p>
+      </div>
+      <div class="form-group">
+        <label><strong>Correo:</strong></label>
+        <p>{{ studentData.email }}</p>
+      </div>
+    </div>
+    
+
+    
+
+    <!-- Selección Empresa y Línea de Carrera -->
+<div class="card selection-section">
+  <h2 class="section-title">Empresa</h2>
+  <div class="form-group">
+    <select class="short-input" [(ngModel)]="selectedCompany">
+      <option *ngFor="let company of companies" [value]="company.id">{{ company.razonSocial }}</option>
+    </select>
+  </div>
+
+  <h2 class="section-title">Línea de Carrera</h2>
+  <div class="form-group">
+    <select class="short-input" [(ngModel)]="selectedCareerLine">
+      <option *ngFor="let line of careerLines" [value]="line.id">{{ line.nombre }}</option>
+    </select>
+  </div>
+
+  <div class="help-section">
+    <h2 class="section-title">Ayuda</h2>
+    <p>{{ helpPhone }}</p>
+    <p>{{ helpEmail }}</p>
+  </div>
+</div>
+    <!-- Datos Empresa -->
+    <div class="card company-data">
+      <h2 class="section-title">Datos Empresa:</h2>
+      <div class="company-data-grid">
+        <div class="left-column">
+          <div class="form-group">
+            <label><strong>Nombre:</strong></label>
+            <input type="text" [(ngModel)]="companyData.name" placeholder="Nombre de la empresa" />
+          </div>
+          <div class="form-group">
+            <label><strong>Número de RUC:</strong></label>
+            <input type="text" [(ngModel)]="companyData.ruc" placeholder="RUC de la empresa" />
+          </div>
+          <div class="form-group">
+            <label><strong>Domicilio social:</strong></label>
+            <input type="text" [(ngModel)]="companyData.address" placeholder="Dirección de la empresa" />
+          </div>
+          <div class="form-group">
+            <label><strong>Teléfono:</strong></label>
+            <input type="text" [(ngModel)]="companyData.phone" placeholder="Teléfono de la empresa" />
+          </div>
+        </div>
+        <div class="right-column">
+          <div class="form-group">
+            <label><strong>Fax:</strong></label>
+            <input type="text" [(ngModel)]="companyData.fax" placeholder="Fax de la empresa" />
+          </div>
+          <div class="form-group">
+            <label><strong>Correo electrónico:</strong></label>
+            <input type="email" [(ngModel)]="companyData.email" placeholder="Correo de la empresa" />
+          </div>
+          <div class="form-group">
+            <label><strong>Página Web:</strong></label>
+            <input type="text" [(ngModel)]="companyData.website" placeholder="Página web de la empresa" />
+          </div>
+          <div class="form-group">
+            <label><strong>Forma Jurídica:</strong></label>
+            <input type="text" [(ngModel)]="companyData.legalForm" placeholder="Forma jurídica de la empresa" />
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="actions">
+    <button class="btn-cancelar">Cancelar</button>
+    <button class="btn-confirmar" (click)="validateAndSubmit()">Confirmado</button>
+  </div>
+
+<div *ngIf="showConfirmation" class="confirmation-card">
+  <p>Datos enviados exitosamente.</p>
+</div>

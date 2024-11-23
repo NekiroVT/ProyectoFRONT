@@ -1,0 +1,69 @@
+<div class="lista-container">
+    <h1>Lista de Solicitudes Aprobadas</h1>
+    
+    <div class="search-filter-bar">
+      <input type="text" placeholder="Buscar..." class="search-input" />
+      <button class="filter-button">
+        <i class="fas fa-filter"></i>
+      </button>
+    </div>
+    
+    <div *ngFor="let solicitud of solicitudes" class="solicitud-card">
+      <div class="solicitud-info">
+        <p><strong>Nombre:</strong> {{ solicitud.nombre }}</p>
+        <p><strong>Código:</strong> {{ solicitud.codigo }}</p>
+        <p><strong>Empresa:</strong> {{ solicitud.empresa }}</p>
+        <p><strong>Número de RUC:</strong> {{ solicitud.ruc }}</p>
+        <p><strong>Estado:</strong>
+          <span [ngClass]="{
+            'en-espera': solicitud.estado === 'En espera',
+            'aprobada': solicitud.estado === 'Aprobada',
+            'rechazada': solicitud.estado === 'Rechazada'
+          }">
+            {{ solicitud.estado }}
+          </span>
+        </p>
+      </div>
+      
+      <div class="solicitud-actions">
+        <button class="view-button" (click)="detalleAprobacionComponent.openModal()">
+          <i class="fas fa-eye"></i> Ver Detalles
+        </button>
+        <button class="edit-button" (click)="openEditModal(solicitud)">
+          <i class="fas fa-pen"></i>
+        </button>
+        <button class="reject-button" (click)="openRejectModal(solicitud)">
+          <i class="fas fa-times"></i>
+        </button>
+      </div>
+    </div>
+
+    
+  
+    <!-- Modal de Detalle de Aprobación -->
+    <app-detalle-aprobacion #detalleAprobacionComponent></app-detalle-aprobacion>
+  
+    
+    <!-- Modal de Confirmación de Rechazo -->
+    <div class="modal-overlay" *ngIf="showRejectConfirmModal">
+      <div class="modal-content reject-confirm-modal">
+        <h3>¿Desea rechazar los archivos que subió el estudiante?</h3>
+        <div class="modal-buttons">
+          <button class="no-reject-btn" (click)="closeRejectConfirmModal()">No Rechazar</button>
+          <button class="reject-btn" (click)="confirmReject()">Rechazar</button>
+        </div>
+      </div>
+    </div>
+  
+    <!-- Modal de Razón de Rechazo -->
+    <div class="modal-overlay" *ngIf="showRejectReasonModal">
+      <div class="modal-content reject-reason-modal">
+        <h3>Escribe la razón del rechazo de documentos</h3>
+        <textarea 
+          placeholder="La razón de su rechazo es... porque..."
+          [(ngModel)]="rejectReason"
+        ></textarea>
+        <button class="send-btn" (click)="sendRejectReason()">Enviar</button>
+      </div>
+    </div>
+  </div>

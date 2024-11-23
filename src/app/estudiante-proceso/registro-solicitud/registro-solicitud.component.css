@@ -1,0 +1,147 @@
+.carta-container {
+  max-width: 1000px;
+  margin: 0 auto;
+  padding: 15px;
+  background-color: #f9f9f9;
+  border-radius: 8px;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+h1 {
+  text-align: center;
+  font-size: 16px; /* Reduced from 20px */
+  margin-bottom: 10px;
+  color: #333;
+}
+
+.info-section {
+  display: grid;
+  grid-template-columns: 1fr 0.6fr;
+  grid-template-rows: auto auto;
+  grid-template-areas:
+    "student-data selection-section"
+    "company-data company-data";
+  gap: 15px;
+}
+
+.student-data {
+  grid-area: student-data;
+}
+
+.selection-section {
+  grid-area: selection-section;
+}
+
+.selection-section .section-title {
+  margin-bottom: 5px; /* Reduced space below section titles */
+  display: block; /* Make titles take full width */
+}
+
+.selection-section .form-group {
+  margin-bottom: 15px; /* Add space between form groups */
+}
+
+.company-data {
+  grid-area: company-data;
+}
+
+.company-data-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 20px;
+}
+
+.form-group {
+  margin-bottom: 10px;
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.form-group label {
+  min-width: 120px;
+  margin-bottom: 0;
+  flex-shrink: 0;
+}
+
+.form-group input,
+.form-group select {
+  flex: 1;
+}
+
+.help-section {
+  margin-top: 15px;
+}
+
+.help-section p {
+  margin: 5px 0;
+  font-size: 12px;
+}
+
+.help-section h2 {
+  margin-bottom: 5px;
+}
+
+.card {
+  background-color: white;
+  padding: 15px;
+  border-radius: 8px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  font-size: 12px;
+}
+
+.section-title {
+  background-color: #003366;
+  color: white;
+  padding: 4px 8px;
+  border-radius: 5px;
+  display: inline-block;
+  margin-bottom: 10px;
+  font-size: 12px;
+}
+
+input, select, .short-input {
+  width: 100%;
+  padding: 6px;
+  font-size: 12px;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+}
+
+.actions {
+  display: flex;
+  justify-content: center;
+  gap: 10px;
+  margin-top: 15px;
+}
+
+.btn-cancelar, .btn-confirmar {
+  padding: 8px 20px;
+  border: none;
+  border-radius: 5px;
+  font-size: 12px;
+  cursor: pointer;
+}
+
+.btn-cancelar {
+  background-color: red;
+  color: white;
+}
+
+.btn-confirmar {
+  background-color: green;
+  color: white;
+}
+
+.confirmation-card {
+  background-color: #d4edda;
+  color: #155724;
+  border: 1px solid #c3e6cb;
+  padding: 10px;
+  margin-top: 15px;
+  text-align: center;
+  border-radius: 5px;
+  font-size: 14px;
+}

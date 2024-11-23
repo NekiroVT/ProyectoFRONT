@@ -1,0 +1,73 @@
+<div class="lista-container">
+  <h1>Lista de Practicas-Pre -Profesionales</h1>
+
+  <div class="search-filter-bar">
+    <input type="text" placeholder="Buscar..." class="search-input" />
+    <button class="filter-button">
+      <i class="fas fa-filter"></i>
+    </button>
+  </div>
+
+  <div *ngFor="let proceso of procesos" class="proceso-card">
+    <div class="proceso-info">
+      <p><strong>Nombre:</strong> {{ proceso.nombre }}</p>
+      <p><strong>Empresa:</strong> {{ proceso.empresa }}</p>
+    </div>
+    <div class="proceso-info">
+      <p><strong>Código:</strong> {{ proceso.codigo }}</p>
+      <p><strong>Número de RUC:</strong> {{ proceso.ruc }}</p>
+    </div>
+    <div class="proceso-status">
+      <p><strong>Estado:</strong> 
+        <span [ngClass]="{'en-espera': proceso.estado === 'En espera', 'en-proceso': proceso.estado === 'En proceso'}">
+          {{ proceso.estado }}
+        </span>
+      </p>
+      
+      <!-- Íconos de Ver detalles, Rechazar y Aceptar -->
+      <button class="view-button" (click)="mostrarDetalle(proceso)">
+        <i class="fas fa-eye"></i> 
+      </button>
+      
+       <!-- Íconos para rechazar y aceptar -->
+       <i class="fas fa-times reject-icon" (click)="confirmarRechazo()"></i> <!-- Ícono de rechazar -->
+       <i class="fas fa-check accept-icon" (click)="confirmarAceptar()"></i> <!-- Ícono de aceptar -->
+     </div>
+   </div>
+
+  <!-- Modal de Detalle -->
+  <app-detalle-solicitud
+    *ngIf="procesoSeleccionado"
+    [proceso]="procesoSeleccionado"
+    (cerrar)="cerrarDetalle()"
+  ></app-detalle-solicitud>
+
+  <!-- Ventana emergente para confirmación de rechazo -->
+<div *ngIf="showConfirmRechazo" class="confirm-modal">
+  <div class="confirm-content">
+    <div class="confirm-header">
+      <i class="fas fa-exclamation-triangle"></i> <!-- Icono de advertencia -->
+    </div>
+    <p>¿Está seguro que desea rechazar esta empresa?</p>
+    <div class="confirm-actions">
+      <!-- Botones de Confirmar y Cancelar -->
+      <button class="btn-confirmar" (click)="rechazarSolicitud()">Sí, Rechazar</button>
+      <button class="btn-cancelar" (click)="cancelarRechazo()">Cancelar</button>
+    </div>
+  </div>
+</div>
+
+<!-- Ventana emergente para confirmación de aceptación -->
+<div *ngIf="showConfirmAceptar" class="confirm-modal">
+  <div class="confirm-content">
+    <div class="confirm-header">
+      <i class="fas fa-exclamation-circle"></i> <!-- Icono de advertencia -->
+    </div>
+    <p>¿Está seguro que desea aceptar esta empresa?</p>
+    <div class="confirm-actions">
+      <!-- Botones de Confirmar y Cancelar -->
+      <button class="btn-confirmar" (click)="aceptarSolicitud()">Sí, Aceptar</button>
+      <button class="btn-cancelar" (click)="cancelarAceptar()">Cancelar</button>
+    </div>
+  </div>
+</div>

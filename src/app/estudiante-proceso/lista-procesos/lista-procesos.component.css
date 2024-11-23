@@ -1,0 +1,71 @@
+.lista-container {
+    max-width: 800px;
+    margin: 0 auto;
+    padding: 20px;
+  }
+  
+  h1 {
+    text-align: center;
+    font-size: 24px;
+    margin-bottom: 20px;
+  }
+  
+  .search-filter-bar {
+    display: flex;
+    align-items: center;
+    margin-bottom: 15px;
+  }
+  
+  .search-input {
+    flex-grow: 1;
+    padding: 8px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    margin-right: 10px;
+  }
+  
+  .filter-button {
+    background: none;
+    border: none;
+    font-size: 18px;
+    cursor: pointer;
+  }
+  
+  .proceso-card {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background-color: #f9f9f9;
+    padding: 15px;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    margin-bottom: 15px;
+  }
+  
+  .proceso-info p {
+    margin: 5px 0;
+  }
+  
+  .proceso-status {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+  }
+  
+  .en-espera {
+    color: orange;
+    font-weight: bold;
+  }
+  
+  .en-proceso {
+    color: green;
+    font-weight: bold;
+  }
+  
+  .view-button {
+    background: none;
+    border: none;
+    font-size: 18px;
+    cursor: pointer;
+  }
+  

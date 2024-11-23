@@ -1,0 +1,26 @@
+<div class="registro-container">
+    <h2>Prácticas Realizadas</h2>
+  
+    <!-- Selector de línea -->
+    <div class="filter-bar">
+      <select [(ngModel)]="lineaSeleccionada" (change)="filtrarPorLinea()" class="filter-select">
+        <option value="">Selecciona la línea a filtrar</option>
+        <option *ngFor="let linea of lineas" [value]="linea">{{ linea }}</option>
+      </select>
+    </div>
+  
+    <!-- Lista de prácticas -->
+    <div *ngFor="let practica of practicas" class="practica-card">
+      <div class="practica-info">
+        <p><strong>Empresa:</strong> {{ practica.empresa }}</p>
+        <p><strong>Estado:</strong>
+          <span [ngClass]="{'espera': practica.estado === 'Espera', 'en-proceso': practica.estado === 'En proceso'}">
+            {{ practica.estado }}
+          </span>
+        </p>
+      </div>
+      <button class="view-button">
+        <i class="fas fa-eye"></i>
+      </button>
+    </div>
+  </div>
